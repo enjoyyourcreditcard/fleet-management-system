@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import ReactDOM from 'react-dom/client';
 import Object from './Object';
+import Event from './Event';
 
 function LeftSideBar() {
     const [isOpen, setIsOpen] = useState(true);
@@ -29,12 +30,10 @@ function LeftSideBar() {
                 {
                     tabCategory === `object` &&
                     <Object />
-                }
-                {
+                } {
                     tabCategory === `event` &&
-                    <Object />
-                }
-                {
+                    <Event />
+                } {
                     tabCategory === `history` &&
                     <Object />
                 }

@@ -14,4 +14,5 @@ import './bootstrap';
 
 import './components/LeftSideBar/LeftSideBar';
 import './components/LeftSideBar/Object';
+import './components/LeftSideBar/Event';
 import './components/BottomMenu';
