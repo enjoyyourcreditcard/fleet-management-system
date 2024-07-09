@@ -38,14 +38,58 @@
         </container>
 
         <script>
-            var map = L.map('map', {
-                center: [-6.175742761104458, 106.82497008779268],
-                zoom: 10
+            var osm = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                maxZoom: 19,
             });
 
-            L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-                maxZoom: 19
-            }).addTo(map);
+            var osmHOT = L.tileLayer('https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png', {
+                maxZoom: 19,
+            });
+
+            var map = L.map('map', {
+                center: [-6.175742761104458, 106.82497008779268],
+                zoom: 10,
+                layers: [osm, osmHOT]
+            });
+
+            var baseMaps = {
+                "OpenStreetMap.HOT": osmHOT,
+                "OpenStreetMap": osm
+            };
+
+            L.control.layers(baseMaps).addTo(map);
+
+            L.marker([-6.360601472373637, 106.8272343507726]).addTo(map)
+                .bindPopup('Muhammad Fattan Habrizi')
+                .openPopup();
+
+            L.marker([-6.411549356883173, 106.86401276812185]).addTo(map)
+                .bindPopup('Nur Hamada')
+                .openPopup();
+
+            L.marker([-6.175365671306495, 106.82714822082814]).addTo(map)
+                .bindPopup('Sammy')
+                .openPopup();
+
+            L.marker([-6.298243879660964, 106.63744560007916]).addTo(map)
+                .bindPopup('Helly')
+                .openPopup();
+
+            L.marker([-6.126561655240927, 106.65506652884146]).addTo(map)
+                .bindPopup('Ishtar')
+                .openPopup();
+
+            L.marker([-6.597660860238665, 106.7995590712114]).addTo(map)
+                .bindPopup('Mela')
+                .openPopup();
+
+            L.marker([-6.37182345687522, 106.8809869969397]).addTo(map)
+                .bindPopup('Jonathan Joestar')
+                .openPopup();
+
+            L.marker([-6.3728443678617985, 106.83443422711113]).addTo(map)
+                .bindPopup('Nur Wahid Septian')
+                .openPopup();
         </script>
     </body>
 </html>
