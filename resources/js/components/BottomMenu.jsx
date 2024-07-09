@@ -1,8 +1,15 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import ReactDOM from 'react-dom/client';
 
-function BottomMenu() {
+function BottomMenu(props) {
     const [isOpen, setIsOpen] = useState(true);
+    const [transportationDetail, setTransportationDetail] = useState(null);
+
+    useEffect(() => {
+        if (props.transportationDetail) {
+            setTransportationDetail(JSON.parse(props.transportationDetail));
+        }
+    }, []);
 
     const slide = {
         translate: isOpen ? `0 0` : `0 100%`
@@ -21,14 +28,14 @@ function BottomMenu() {
             <div className="relative grid grid-flow-col auto-cols-max divide-x divide-neutral-500">
                 <div className='w-96'>
                     <div className='py-2 px-4 border-b border-neutral-500 font-bold'>
-                        Toyota Sprinter Trueno 3door GT-APEX
+                        { transportationDetail ? transportationDetail.name : `Pilih objek` }
                     </div>
                     <div className='px-4 py-2'>
                         <div className="grid grid-cols-2">
                             <div className="col-span-1 pb-2 mb-2 border-b border-neutral-500">Driver:</div>
-                            <div className="col-span-1 pb-2 mb-2 border-b border-neutral-500 font-extralight">Nur Wahid Septian</div>
+                            <div className="col-span-1 pb-2 mb-2 border-b border-neutral-500 font-extralight">{ transportationDetail ? transportationDetail.driver : `No data` }</div>
                             <div className="col-span-1 pb-2 mb-2 border-b border-neutral-500">Address:</div>
-                            <div className="col-span-1 pb-2 mb-2 border-b border-neutral-500 font-extralight">Jl. Margonda Raya No.358, Kemiri Muka, Kecamatan Beji, Kota Depok, Jawa Barat 16423</div>
+                            <div className="col-span-1 pb-2 mb-2 border-b border-neutral-500 font-extralight">{ transportationDetail ? transportationDetail.address : `No data` }</div>
                         </div>
                     </div>
                 </div>
@@ -42,12 +49,15 @@ function BottomMenu() {
 
 export default BottomMenu;
 
-if (document.getElementById('bottom-menu')) {
-    const Index = ReactDOM.createRoot(document.getElementById("bottom-menu"));
+const bladeElement = document.getElementById("bottom-menu");
+
+if (bladeElement) {
+    const Index = ReactDOM.createRoot(bladeElement);
+    const props = Object.assign({}, bladeElement.dataset);
 
     Index.render(
         <React.StrictMode>
-            <BottomMenu/>
+            <BottomMenu {...props}/>
         </React.StrictMode>
     )
 }

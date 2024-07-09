@@ -8,7 +8,7 @@ function Object() {
                 <input type="text" placeholder="Search.." className="w-full px-2 py-1 bg-neutral-700 border border-neutral-500 rounded-lg" />
             </div>
             <div className="grid grid-cols-1 divide-y divide-neutral-500">
-                <div className="flex justify-between">
+                <div className="flex justify-between hover:brightness-125 active:brightness-75" onClick={ () => { window.location.href=`?driver=Nur Wahid Septian`; } }>
                     <div className="py-2 pl-4">
                         <div className='font-bold'>Toyota Sprinter Trueno 3door GT-APEX</div>
                         <div className='text-emerald-400'>Dalam perjalanan</div>

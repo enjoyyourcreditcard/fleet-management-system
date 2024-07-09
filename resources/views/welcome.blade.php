@@ -8,7 +8,6 @@
         <link rel="apple-touch-icon" sizes="180x180" href="{{ ('images/favicon_io/apple-touch-icon.png') }}">
         <link rel="icon" type="image/png" sizes="32x32" href="{{ ('images/favicon_io/apple-touch-icon.png') }}">
         <link rel="icon" type="image/png" sizes="16x16" href="{{ ('images/favicon_io/apple-touch-icon.png') }}">
-        <link rel="manifest" href="/site.webmanifest">
 
         <!-- Title -->
         <title>GPS Track</title>
@@ -31,7 +30,9 @@
                 <span>Admin</span>
             </div>
 
-            <img width="36" height="36" src="{{ Asset('images/spero.png') }}" alt="logo">
+            <a href="{{ Route('index') }}">
+                <img width="36" height="36" src="{{ Asset('images/spero.png') }}" alt="logo">
+            </a>
 
             <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-logout text-red-500"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M14 8v-2a2 2 0 0 0 -2 -2h-7a2 2 0 0 0 -2 2v12a2 2 0 0 0 2 2h7a2 2 0 0 0 2 -2v-2" /><path d="M9 12h12l-3 -3" /><path d="M18 15l3 -3" /></svg>
         </nav>
@@ -39,12 +40,15 @@
         <container class="flex-grow">
             <div id="left-side-bar"></div>
 
-            <div id="bottom-menu"></div>
+            <div id="bottom-menu" data-transportation-detail="{{ $transportationDetail }}"></div>
 
             <div id="map" class="h-full z-10"></div>
         </container>
 
         <script>
+            const transportations = {{ Js::from($transportations) }};
+            const transportationDetail = {{ Js::from($transportationDetail) }};
+
             var osm = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
                 maxZoom: 19,
             });
@@ -53,11 +57,20 @@
                 maxZoom: 19,
             });
 
-            var map = L.map('map', {
-                center: [-6.175742761104458, 106.82497008779268],
-                zoom: 10,
-                layers: [osm, osmHOT]
-            });
+            if (transportationDetail) {
+                var map = L.map('map', {
+                    center: [transportationDetail.latitude, transportationDetail.longitude],
+                    zoom: 17,
+                    layers: [osm, osmHOT]
+                });
+            } else {
+                var map = L.map('map', {
+                    center: [-6.175742761104458, 106.82497008779268],
+                    zoom: 10,
+                    layers: [osm, osmHOT]
+                });
+            }
+
 
             var baseMaps = {
                 "OpenStreetMap.HOT": osmHOT,
@@ -66,37 +79,41 @@
 
             L.control.layers(baseMaps).addTo(map);
 
-            L.marker([-6.360601472373637, 106.8272343507726]).addTo(map)
-                .bindPopup('Muhammad Fattan Habrizi')
-                .openPopup();
+            // L.marker([-6.360601472373637, 106.8272343507726]).addTo(map)
+            //     .bindPopup('Muhammad Fattan Habrizi')
+            //     .openPopup();
 
-            L.marker([-6.411549356883173, 106.86401276812185]).addTo(map)
-                .bindPopup('Nur Hamada')
-                .openPopup();
+            // L.marker([-6.411549356883173, 106.86401276812185]).addTo(map)
+            //     .bindPopup('Nur Hamada')
+            //     .openPopup();
 
-            L.marker([-6.175365671306495, 106.82714822082814]).addTo(map)
-                .bindPopup('Sammy')
-                .openPopup();
+            // L.marker([-6.175365671306495, 106.82714822082814]).addTo(map)
+            //     .bindPopup('Sammy')
+            //     .openPopup();
 
-            L.marker([-6.298243879660964, 106.63744560007916]).addTo(map)
-                .bindPopup('Helly')
-                .openPopup();
+            // L.marker([-6.298243879660964, 106.63744560007916]).addTo(map)
+            //     .bindPopup('Helly')
+            //     .openPopup();
 
-            L.marker([-6.126561655240927, 106.65506652884146]).addTo(map)
-                .bindPopup('Ishtar')
-                .openPopup();
+            // L.marker([-6.126561655240927, 106.65506652884146]).addTo(map)
+            //     .bindPopup('Ishtar')
+            //     .openPopup();
 
-            L.marker([-6.597660860238665, 106.7995590712114]).addTo(map)
-                .bindPopup('Mela')
-                .openPopup();
+            // L.marker([-6.597660860238665, 106.7995590712114]).addTo(map)
+            //     .bindPopup('Mela')
+            //     .openPopup();
 
-            L.marker([-6.37182345687522, 106.8809869969397]).addTo(map)
-                .bindPopup('Jonathan Joestar')
-                .openPopup();
+            // L.marker([-6.37182345687522, 106.8809869969397]).addTo(map)
+            //     .bindPopup('Jonathan Joestar')
+            //     .openPopup();
 
-            L.marker([-6.3728443678617985, 106.83443422711113]).addTo(map)
-                .bindPopup('Nur Wahid Septian')
-                .openPopup();
+            for (let index = 0; index < transportations.length; index++) {
+                const transportation = transportations[index];
+
+                L.marker([transportation.latitude, transportation.longitude]).addTo(map)
+                    .bindPopup(transportation.driver)
+                    .openPopup();
+            }
         </script>
     </body>
 </html>
