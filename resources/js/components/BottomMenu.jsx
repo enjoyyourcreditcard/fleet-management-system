@@ -61,5 +61,3 @@ if (bladeElement) {
         </React.StrictMode>
     )
 }
-
-

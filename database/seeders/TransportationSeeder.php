@@ -17,10 +17,40 @@ class TransportationSeeder extends Seeder
             [
                 'name' => 'Toyota Sprinter Trueno 3door GT-APEX',
                 'driver' => 'Nur Wahid Septian',
-                'address' => 'Jl. Margonda Raya No.358, Kemiri Muka, Kecamatan Beji, Kota Depok, Jawa Barat 16423',
-                'latitude' => -6.3728443678617985,
-                'longitude' => 106.83443422711113,
-            ]
+                'address' => 'Kemiri Muka, Beji, Depok City, West Java 16424',
+                'latitude' => -6.372526241601111,
+                'longitude' => 106.83278544440853
+            ], [
+                'name' => 'Mazda ɛ̃fini RX-7 Type R',
+                'driver' => 'Muhammad Fattan Habrizi',
+                'address' => 'Jl. Prof. DR. Sumitro Djojohadikusumo, Pondok Cina, Kecamatan Beji, Kota Depok, Jawa Barat 16424',
+                'latitude' => -6.360823186937455,
+                'longitude' => 106.82920672078069
+            ], [
+                'name' => 'Subaru Impreza WRX STi Coupe Type R Version V',
+                'driver' => 'Muhammad Nur Hamada',
+                'address' => 'Jl. Perumahan Jatijajar, Jatijajar, Kec. Tapos, Kota Depok, Jawa Barat 16451',
+                'latitude' => -6.411340139943225,
+                'longitude' => 106.86431252666556
+            ], [
+                'name' => 'Mazda SAVANNA RX-7 ∞ III',
+                'driver' => 'Sammy Bernald',
+                'address' => 'Jl. Medan Merdeka Sel., RT.11/RW.2, Gambir, Kecamatan Gambir, Kota Jakarta Pusat, Daerah Khusus Ibukota Jakarta 10110',
+                'latitude' => -6.180384321069731,
+                'longitude' => 106.83147672874236
+            ], [
+                'name' => 'Nissan Skyline GT-R V-Spec II',
+                'driver' => 'Jonathan Joestar',
+                'address' => 'Jl. BSD Grand Boulevard, Pagedangan, Kec. Pagedangan, Kabupaten Tangerang, Banten 15339',
+                'latitude' => -6.29757617965779,
+                'longitude' => 106.63668172895538
+            ], [
+                'name' => 'Nissan SilEighty',
+                'driver' => 'Bella Insani',
+                'address' => 'Jl. MT Haryono, Batu Ampar, Kec. Balikpapan Utara, Kota Balikpapan, Kalimantan Timur 76115',
+                'latitude' => -1.2250092814416436,
+                'longitude' => 116.86750538220574
+            ],
         ];
 
         foreach ($dummies as $dummy) {

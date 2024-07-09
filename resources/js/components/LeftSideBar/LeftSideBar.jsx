@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 import ReactDOM from 'react-dom/client';
-import Object from './Object';
+import Transportation from './Object';
 import Event from './Event';
 import History from './History';
 
-function LeftSideBar() {
+function LeftSideBar(props) {
     const [isOpen, setIsOpen] = useState(true);
     const [tabCategory, setTabCategory] = useState(`object`);
+    const [transportations, setTransportations] = useState(JSON.parse(props.transportations));
 
     const slide = {
         translate: isOpen ? 0 : `-100%`
@@ -30,7 +31,7 @@ function LeftSideBar() {
             <div className="relative">
                 {
                     tabCategory === `object` &&
-                    <Object />
+                    <Transportation transportations={ transportations } />
                 } {
                     tabCategory === `event` &&
                     <Event />
@@ -48,14 +49,16 @@ function LeftSideBar() {
 
 export default LeftSideBar;
 
-if (document.getElementById('left-side-bar')) {
-    const Index = ReactDOM.createRoot(document.getElementById("left-side-bar"));
+const bladeElement = document.getElementById("left-side-bar");
+
+if (bladeElement) {
+    const Index = ReactDOM.createRoot(bladeElement);
+    const props = Object.assign({}, bladeElement.dataset);
 
     Index.render(
         <React.StrictMode>
-            <LeftSideBar/>
+            <LeftSideBar {...props}/>
         </React.StrictMode>
     )
 }
-
 

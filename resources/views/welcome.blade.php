@@ -38,7 +38,7 @@
         </nav>
 
         <container class="flex-grow">
-            <div id="left-side-bar"></div>
+            <div id="left-side-bar" data-transportations="{{ $transportations }}"></div>
 
             <div id="bottom-menu" data-transportation-detail="{{ $transportationDetail }}"></div>
 
@@ -60,7 +60,7 @@
             if (transportationDetail) {
                 var map = L.map('map', {
                     center: [transportationDetail.latitude, transportationDetail.longitude],
-                    zoom: 17,
+                    zoom: 16,
                     layers: [osm, osmHOT]
                 });
             } else {
@@ -79,40 +79,12 @@
 
             L.control.layers(baseMaps).addTo(map);
 
-            // L.marker([-6.360601472373637, 106.8272343507726]).addTo(map)
-            //     .bindPopup('Muhammad Fattan Habrizi')
-            //     .openPopup();
-
-            // L.marker([-6.411549356883173, 106.86401276812185]).addTo(map)
-            //     .bindPopup('Nur Hamada')
-            //     .openPopup();
-
-            // L.marker([-6.175365671306495, 106.82714822082814]).addTo(map)
-            //     .bindPopup('Sammy')
-            //     .openPopup();
-
-            // L.marker([-6.298243879660964, 106.63744560007916]).addTo(map)
-            //     .bindPopup('Helly')
-            //     .openPopup();
-
-            // L.marker([-6.126561655240927, 106.65506652884146]).addTo(map)
-            //     .bindPopup('Ishtar')
-            //     .openPopup();
-
-            // L.marker([-6.597660860238665, 106.7995590712114]).addTo(map)
-            //     .bindPopup('Mela')
-            //     .openPopup();
-
-            // L.marker([-6.37182345687522, 106.8809869969397]).addTo(map)
-            //     .bindPopup('Jonathan Joestar')
-            //     .openPopup();
-
             for (let index = 0; index < transportations.length; index++) {
                 const transportation = transportations[index];
 
                 L.marker([transportation.latitude, transportation.longitude]).addTo(map)
-                    .bindPopup(transportation.driver)
-                    .openPopup();
+                    // .bindPopup(transportation.driver)
+                    // .openPopup();
             }
         </script>
     </body>
