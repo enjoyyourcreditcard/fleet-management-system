@@ -28,7 +28,7 @@ function Event() {
                     <tbody>
                         <tr className="border-b bg-neutral-700 border-neutral-500">
                             <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                05:11:59 2024-07-09
+                                16:20:30 2024-07-08
                             </th>
                             <td className="px-6 py-4">
                                 Mazda ɛ̃fini RX-7 Type R
@@ -42,7 +42,7 @@ function Event() {
                         </tr>
                         <tr className="border-b bg-neutral-700 border-neutral-500">
                             <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                05:11:59 2024-07-09
+                                13:15:50 2024-07-08
                             </th>
                             <td className="px-6 py-4">
                                 Toyota Sprinter Trueno 3door GT-APEX
@@ -56,7 +56,7 @@ function Event() {
                         </tr>
                         <tr className="border-b bg-neutral-700 border-neutral-500">
                             <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                05:11:59 2024-07-09
+                                10:15:30 2024-07-08
                             </th>
                             <td className="px-6 py-4">
                                 Mazda ɛ̃fini RX-7 Type R
@@ -70,7 +70,7 @@ function Event() {
                         </tr>
                         <tr className="border-b bg-neutral-700 border-neutral-500">
                             <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                05:11:59 2024-07-09
+                                09:45:20 2024-07-08
                             </th>
                             <td className="px-6 py-4">
                                 Nissan Silvia K's
@@ -84,7 +84,7 @@ function Event() {
                         </tr>
                         <tr className="border-b bg-neutral-700 border-neutral-500">
                             <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                05:11:59 2024-07-09
+                                09:00:00 2024-07-08
                             </th>
                             <td className="px-6 py-4">
                                 Nissan SilEighty

@@ -24,7 +24,7 @@ function LeftSideBar(props) {
     return (
         <div className="absolute z-20 bg-neutral-700 border-t border-r border-neutral-500 text-neutral-100 rounded-tr-lg bottom-0" style={ slide }>
             <div className="grid grid-cols-3 divide-x divide-neutral-500 border-b border-neutral-500">
-                <button className={ `px-10 py-2` + (tabCategory === `object` ?  `` : ` bg-neutral-800 text-neutral-300 hover:brightness-125`) } onClick={ () => setTabCategory(`object`) }>Objek</button>
+                <button className={ `px-10 py-2` + (tabCategory === `object` ?  `` : ` bg-neutral-800 text-neutral-300 hover:brightness-125`) } onClick={ () => setTabCategory(`object`) }>Transportasi</button>
                 <button className={ `px-10 py-2` + (tabCategory === `event` ?  `` : ` bg-neutral-800 text-neutral-300 hover:brightness-125`) } onClick={ () => setTabCategory(`event`) }>Acara</button>
                 <button className={ `px-10 py-2 rounded-tr-lg` + (tabCategory === `history` ?  `` : ` bg-neutral-800 text-neutral-300 hover:brightness-125`) } onClick={ () => setTabCategory(`history`) }>Historikal</button>
             </div>
