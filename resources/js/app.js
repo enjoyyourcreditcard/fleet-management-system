@@ -14,3 +14,4 @@ import './bootstrap';
 
 import './components/LeftSideBar/LeftSideBar';
 import './components/BottomMenu';
+import './components/LogoutButton';

@@ -4,13 +4,16 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
+        <!-- CSRF Token -->
+        <meta name="csrf-token" content="{{ csrf_token() }}">
+
         <!-- Favicon -->
         <link rel="apple-touch-icon" sizes="180x180" href="{{ ('images/favicon_io/apple-touch-icon.png') }}">
         <link rel="icon" type="image/png" sizes="32x32" href="{{ ('images/favicon_io/apple-touch-icon.png') }}">
         <link rel="icon" type="image/png" sizes="16x16" href="{{ ('images/favicon_io/apple-touch-icon.png') }}">
 
         <!-- Title -->
-        <title>GPS Track</title>
+        <title>{{ config('app.name', 'Laravel') }}</title>
 
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -34,7 +37,7 @@
                 <img width="36" height="36" src="{{ Asset('images/spero.png') }}" alt="logo">
             </a>
 
-            <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-logout text-red-500"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M14 8v-2a2 2 0 0 0 -2 -2h-7a2 2 0 0 0 -2 2v12a2 2 0 0 0 2 2h7a2 2 0 0 0 2 -2v-2" /><path d="M9 12h12l-3 -3" /><path d="M18 15l3 -3" /></svg>
+            <div id="logout-button" data-logout-route="{{ route('logout') }}" data-token="{{ csrf_token() }}"></div>
         </nav>
 
         <container class="flex-grow">
