@@ -12,6 +12,7 @@ import './bootstrap';
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-import './components/LeftSideBar/LeftSideBar';
 import './components/BottomMenu';
+import './components/dashboard/Sidebar';
+import './components/LeftSideBar/LeftSideBar';
 import './components/LogoutButton';

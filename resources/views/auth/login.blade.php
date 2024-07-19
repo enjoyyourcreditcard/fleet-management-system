@@ -1,5 +1,7 @@
 @extends('layouts.auth.app')
 
+@section('title') Login @endsection
+
 @section('content')
 <div class="flex flex-col md:flex-row">
     <div class="min-w-96 w-full flex flex-col justify-end items-start bg-neutral-900 border-t border-l border-r md:border-r-0 md:border-b border-neutral-700 rounded-t-2xl md:rounded-tr-none md:rounded-l-2xl p-6">

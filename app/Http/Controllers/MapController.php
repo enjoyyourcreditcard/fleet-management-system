@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Transportation;
 
-class DashboardController extends Controller
+class MapController extends Controller
 {
     /**
      * Create a new controller instance.
@@ -18,6 +18,10 @@ class DashboardController extends Controller
     }
 
     public function index(Request $request) {
-        return view('dashboard.index');
+        $transportations = Transportation::all();
+
+        $transportationDetail = $request->driver ? $transportations->where('driver', $request->driver)->first() : null;
+
+        return view('map.index', compact(['transportations', 'transportationDetail']));
     }
 }
