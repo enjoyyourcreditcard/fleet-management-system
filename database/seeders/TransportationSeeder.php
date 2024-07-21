@@ -18,8 +18,8 @@ class TransportationSeeder extends Seeder
                 'name' => 'Toyota Sprinter Trueno 3door GT-APEX',
                 'driver' => 'Nur Wahid Septian',
                 'address' => 'Kemiri Muka, Beji, Depok City, West Java 16424',
-                'latitude' => -6.372526241601111,
-                'longitude' => 106.83278544440853
+                'latitude' => -1.751248463988304,
+                'longitude' => 101.259637009352446
             ], [
                 'name' => 'Mazda ɛ̃fini RX-7 Type R',
                 'driver' => 'Muhammad Fattan Habrizi',

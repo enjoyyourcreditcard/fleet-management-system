@@ -54,6 +54,10 @@
             const transportationDetail = {{ Js::from($transportationDetail) }};
         </script>
 
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-gpx/2.0.0/gpx.min.js"></script>
+
         <script src="{{ Asset('js/map.js') }}"></script>
+
+        @stack('java.script')
     </body>
 </html>

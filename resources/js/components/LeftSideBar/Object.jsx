@@ -11,7 +11,7 @@ function Object(props) {
                 {
                     props.transportations ?
                     props.transportations.map((transportation) =>
-                        <div className="flex justify-between hover:brightness-125 active:brightness-75 cursor-pointer" onClick={ () => { window.location.href=`?driver=${transportation.driver}`; } } key={ transportation.id }>
+                        <div className="flex justify-between hover:brightness-125 active:brightness-75 cursor-pointer" onClick={ () => { window.location.href=`/map?driver=${transportation.driver}`; } } key={ transportation.id }>
                             <div className="py-2 pl-4">
                                 <div className='font-bold'>{ transportation.name }</div>
                                 {

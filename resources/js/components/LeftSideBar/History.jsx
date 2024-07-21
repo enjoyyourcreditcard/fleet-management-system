@@ -9,7 +9,9 @@ function History() {
                     Objek :
                 </div>
                 <div className="col-span-2">
-                    <select className='w-full border border-neutral-500 bg-neutral-700 rounded-lg px-2 py-1' name="" id=""></select>
+                    <select className='w-full border border-neutral-500 bg-neutral-700 rounded-lg px-2 py-1' name="" id="">
+                        <option value="">Toyota Sprinter Trueno 3door GT-APEX</option>
+                    </select>
                 </div>
                 <div className="col-span-1">
                     Mulai :
@@ -31,9 +33,12 @@ function History() {
                 </div>
             </div>
             <hr className='my-4 border-neutral-500' />
-            <button className='w-full rounded-lg border border-neutral-500 bg-blue-400 hover:brightness-125 text-neutral-200 py-2 font-bold'>
+            <a href='/map/history?driver=Nur%20Wahid%20Septian' className='w-full block text-center rounded-lg border border-neutral-500 bg-blue-400 hover:brightness-125 text-neutral-200 py-2 font-bold'>
                 Show
-            </button>
+            </a>
+            {/* <button className='w-full rounded-lg border border-neutral-500 bg-blue-400 hover:brightness-125 text-neutral-200 py-2 font-bold'>
+                Show
+            </button> */}
         </div>
     );
 }

@@ -24,4 +24,12 @@ class MapController extends Controller
 
         return view('map.index', compact(['transportations', 'transportationDetail']));
     }
+
+    public function History(Request $request) {
+        $transportations = Transportation::all();
+
+        $transportationDetail = $request->driver ? $transportations->where('driver', $request->driver)->first() : null;
+
+        return view('map.history', compact(['transportations', 'transportationDetail']));
+    }
 }
